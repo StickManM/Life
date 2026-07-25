@@ -12,9 +12,9 @@ public class Main extends PApplet {
     }
 
     public void setup() {
-        scale = 5;
-        rowCount = height/5;
-        columnCount = width/5;
+        scale = 10;
+        rowCount = height/scale;
+        columnCount = width/scale;
         board = new int [rowCount][columnCount];
 
         for (int r = 0; r < rowCount; r++) {
@@ -52,8 +52,8 @@ public class Main extends PApplet {
             }
         }
         if (mousePressed) {
-            int correspondingRow = (int) mouseY/5;
-            int correspondingColumn = (int) mouseX/5;
+            int correspondingRow = (int) mouseY/scale;
+            int correspondingColumn = (int) mouseX/scale;
             if(correspondingRow >= 0 && correspondingColumn >= 0 && correspondingRow < rowCount && correspondingColumn < columnCount){
                 tempBoard[correspondingRow][correspondingColumn] = 1;
             }
