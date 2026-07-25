@@ -7,7 +7,7 @@ public class Main extends PApplet {
     int scale;
 
     public void settings() {
-        size(900,1000);
+        size(1000,1000);
         pixelDensity(1);
     }
 
@@ -51,6 +51,14 @@ public class Main extends PApplet {
                 }
             }
         }
+        if (mousePressed) {
+            int correspondingRow = (int) mouseY/5;
+            int correspondingColumn = (int) mouseX/5;
+            if(correspondingRow >= 0 && correspondingColumn >= 0 && correspondingRow < rowCount && correspondingColumn < columnCount){
+                tempBoard[correspondingRow][correspondingColumn] = 1;
+            }
+        }
+
         for (int r = 0; r < rowCount; r++) {
             for (int c = 0; c < columnCount; c++) {
                 board[r][c] = tempBoard[r][c];
